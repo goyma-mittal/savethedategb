@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italianno&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Romantic blush & sage palette */
+    --background: 35 40% 96%;
+    --foreground: 20 25% 22%;
+
+    --card: 35 40% 98%;
+    --card-foreground: 20 25% 22%;
+
+    --popover: 35 40% 98%;
+    --popover-foreground: 20 25% 22%;
+
+    --primary: 15 35% 38%;
+    --primary-foreground: 35 40% 96%;
+
+    --secondary: 25 30% 88%;
+    --secondary-foreground: 20 25% 22%;
+
+    --muted: 30 25% 90%;
+    --muted-foreground: 20 15% 45%;
+
+    --accent: 350 35% 78%;
+    --accent-foreground: 20 30% 25%;
+
+    --blush: 350 45% 85%;
+    --blush-deep: 355 40% 70%;
+    --sage: 95 15% 55%;
+    --sage-deep: 100 12% 38%;
+    --gold: 40 45% 55%;
+    --ivory: 35 40% 96%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 35 40% 96%;
+
+    --border: 30 20% 82%;
+    --input: 30 20% 82%;
+    --ring: 15 35% 38%;
+
+    --radius: 0.25rem;
+
+    --shadow-soft: 0 10px 40px -15px hsl(20 30% 30% / 0.15);
+    --shadow-petal: 0 20px 60px -20px hsl(355 40% 70% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: 'Italianno', cursive;
+  }
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-sans-refined {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.2em;
+  }
+
+  .tracking-wider-2 {
+    letter-spacing: 0.35em;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in-slow {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes float-petal {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  .animate-fade-up { animation: fade-up 1.2s ease-out both; }
+  .animate-fade-in-slow { animation: fade-in-slow 2s ease-out both; }
+  .animate-float { animation: float-petal 6s ease-in-out infinite; }
+}
